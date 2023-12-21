@@ -162,18 +162,17 @@ footer p {
 
 .graphic-container2 {
     display: flex;
-    /* flex-wrap: wrap; */
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3), /* Outer shadow for depth */
         inset -5px -5px 10px rgba(255, 255, 255, 0.5), /* Inner lighter shadow */
         inset 5px 5px 10px rgba(0, 0, 0, 0.3); /* Inner darker shadow */
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: calc((100vh - 110px) / 3.5);
+    height: calc((100vh - 110px) / 3.5); /* setting the heigh of the section */
     padding: 2px;
     box-sizing: border-box;
     background: linear-gradient(#a8b3bd, #41d0ff);
-    border-radius: 15px/12px;
+    border-radius: 150px;
 }
 .middleSection{
     background: linear-gradient(#708090, #00bfff);
