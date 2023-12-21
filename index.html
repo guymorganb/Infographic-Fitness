@@ -3,9 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+    <title>Fitness & Wellness in College Students</title>
+    <style>
+         body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #2F80ED; /* Fallback color behind the background image */
+            background-image: url('./assets/city.png'); /* Path to your background image */
+            background-position: center center; /* Center the image in both directions */
+            background-repeat: no-repeat;
+            background-size: cover; /* Cover the viewport without stretching */
+            color: #333;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: lightgray;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        nav p {
+            margin: 0;
+            padding-left: 15%; /* Offset text to the left */
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Attractive font */
+            font-size: 24px; /* Larger font size */
+            color: #2F80ED; /* Color that stands out */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Text shadow for depth */
+        }
+        aside {
+            position: fixed;
+            top: 9%; /* Below the nav bar */
+            left: 0;
+            bottom: 10%; /* Above the footer */
+            width: 200px; /* Adjust width as needed */
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Box shadow for aside */
+            border-radius: 20px/18px;
+            margin-left: 1%;
+        }
+        .content {
+            position: absolute;
+            top: 50px; /* Below the nav bar */
+            left: 210px; /* Adjust for aside + padding */
+            right: 0;
+            bottom: 60px; /* Above the footer */
+            overflow-y: auto; /* Enable scrolling if content overflows */
+            padding: 10px;
+        }
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-content: flex-start;
+        }
+
+        .element {
+            flex: 1;
+            width: 60%;
+            height: calc((100vh - 110px) / 3.5); /* Fit to viewport height */
+            background-color: transparent;
+            text-align: center;
+            
+            margin: 1em;
+            box-sizing: border-box;
+        }
+        .chartBackdrop{
+            background-color: rgba(168, 168, 168, 0.3);
+            border-radius: 25px;
+            
+        }
+
+        .element, .runner-image-container {
+            flex: 1; /* Flex grow */
+            min-width: 100px; /* Minimum width to prevent too much shrinking */
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Center horizontally */
+        }
+
+        .runner-image-container {
+            flex-basis: 30%; /* Set the base width to 30% */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: lightgray;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5); /* Box shadow for footer */
+        }
+        .runner-image {
+            max-width: 100%; /* Scales the image down if it's larger than the element */
+            max-height: 100%; /* Scales the image down if it's taller than the element */
+            height: auto; /* Maintains the aspect ratio */
+            display: block; /* Removes any extra space below the image */
+        }
+        .graphic-container {
+            position: relative; /* For absolute positioning of the text overlay */
+            width: 100%; /* Full width of the parent */
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Center horizontally */
+            height: calc((100vh - 110px) / 3.5); 
+            min-width: 300px; /* Minimum width */
+            min-height: 200px;
+            border: 1px solid;
+        }
+        .graphic-container2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: calc((100vh - 110px) / 3.5);
+            padding: 2px;
+            box-sizing: border-box;
+        }
+        .iframe-style {
+            width: 15%; /* Adjust iframe width */
+            height: auto;
+            border: none;
+            margin: 1px;
+            border-radius: 15px;
+        }
+        .graphic-container, .runner-image {
+            transition: all 0.3s ease;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 10px; /* Adjust as needed for top-left positioning */
+            left: 10px; /* Adjust as needed for top-left positioning */
+            color: white;
+            font-size: 1em;
+            text-align: left;
+            z-index: 10;
+        }
+        #toggleAside {
+            display: none; /* Initially hidden on larger screens */
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 3;
+            background-color: #2F80ED; /* A color that matches your nav bar */
+            color: white; /* Text color */
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            text-align: center; /* Center the text and icon */
+            line-height: 1.2; /* Adjust line height for better spacing */
+            padding: 3px;
+        }
+        .graphic-image {
+            max-width: 30%;
+            height: auto;
+            margin: 5px;
+        }
+        #toggleAside span {
+            display: block; /* Make the text a block element to appear above the icon */
+            font-size: 8px; /* Adjust font size */
+        }
+        #toggleAside:hover {
+            background-color: #1E60C5; /* Darker shade on hover */
+        }
+        .graphic-container canvas {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 767px) {
+        aside {
+            position: fixed;
+            top: 9%;
+            left: -200px; /* Start off-screen */
+            bottom: 10%;
+            width: 200px;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            border-radius: 20px/18px;
+            margin-left: 1%;
+            transition: left 0.3s; /* Smooth transition for sliding effect */
+            z-index: 5; /* Ensure it's above other content */
+        }
+        #toggleAside {
+            display: block; /* Show button */
+        }
+        .content {
+            left: 10px; /* Adjust left position when aside is hidden */
+            right: 10px; /* Add some spacing to the right */
+        }
+        .element {
+            width: 100%; /* Full width on small screens */
+            margin: 10px 0; /* Adjust margin for better spacing */
+            height: auto; /* Adjust height for smaller screens */
+        }
+        .graphic-container {
+            height: auto; /* Adjust height for smaller screens */
+            margin-top: 8%;
+        }
+        .text-overlay {
+            font-size: 0.8em; /* Smaller font size for overlays */
+        }
+    }
+            @media (max-width: 1024px) {
+        .element {
+            width: 70%; /* Slightly wider on medium screens */
+        }
+    }
+       
+    </style>
 </head>
 <body>
-    
+    <!-- Navigation Bar -->
+    <nav>
+        <button id="toggleAside">
+            <span>Toggle</span>
+            ☰
+        </button>
+        <p>Welcome to Our Research Infographic</p>
+    </nav>
+
+    <!-- Aside -->
+    <aside>
+        <h2>Additional Information</h2>
+        <p>Content for the aside...</p>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Section 1 -->
+        <section aria-labelledby="section1-heading">
+         
+            <div class="element graphic-container chartBackdrop">
+                <canvas id="myChart"></canvas>
+                <div class="text-overlay"></div>
+            </div>
+            
+            <div class="element"><image style="border-radius: 10%;" class="runner-image" alt="Weight-lifter" src="./assets/weightlifter.png"></image></div>
+
+            
+           
+        </section>
+
+        <!-- Section 2 -->
+        <section aria-labelledby="section2-heading">
+
+            <div class="element graphic-container2">
+                <img class="graphic-image" src="./assets/graphic2.png" alt="Graphic for Element 2">
+                <div class="text-overlay"></div>
+                
+                <img class="graphic-image" src="./assets/graphic2.png" alt="Graphic for Element 2">
+            </div>
+            
+            
+           
+        </section>
+
+        <!-- Section 3 -->
+        <section aria-labelledby="section3-heading">
+
+            <div class="element"><iframe src="https://giphy.com/embed/jds5Lfam0b8WjFeF7l" frameborder="0" class="iframe-style"></iframe><image class="runner-image" alt="Runner" src="./assets/runner2.png"></image></div>
+            <div class="element graphic-container">
+                <img class="graphic-image" src="./assets/graphic2.png" alt="Graphic for Element 2">
+                <div class="text-overlay">Description for Element 2</div>
+            </div>
+  
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Footer Content Here</p>
+        <script src="./scripts/script.js" defer></script>
+    </footer>
 </body>
 </html>
