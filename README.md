@@ -86,4 +86,3 @@ Special thanks to those who have contributed to the research and development of 
 
 🚀 Ready to explore the connection between fitness and wellness in college students? Let's dive in!
 
-This README.md provides a structured overview of the project, its objectives, and how 

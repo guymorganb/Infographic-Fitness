@@ -1,7 +1,7 @@
 const data = {
     labels: ['Gender','Year in College', 'GPA', 'Age', 'Height', 'Weight', 'Hand Grip Strength', 'Leg Press 1RM', 'Leg Extension 1RM'],
     datasets: [{
-        label: 'Correlation with BMI',
+        label: 'Positive Correlation with BMI',
         data: [0.332, -0.253, -0.404,  0.227, 0.231, 0.823, 0.414, 0.424, 0.306],
         backgroundColor: ['green','red', 'red', 'green', 'green', 'green', 'green', 'green', 'green'],
         
@@ -90,12 +90,14 @@ const myChart = new Chart(
 document.addEventListener('DOMContentLoaded', function () {
     var toggleButton = document.getElementById('toggleAside');
     var asideElement = document.querySelector('aside');
-
+    var orderedList = document.querySelector('ol');
     toggleButton.addEventListener('click', function () {
         if (asideElement.style.left === '0px') {
             asideElement.style.left = '-200px';
+            orderedList.style.left = '-200px'
         } else {
             asideElement.style.left = '0px';
+            orderedList.style.left = '0px';
         }
     });
 });
