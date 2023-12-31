@@ -41,7 +41,7 @@ aside {
     top: 9%; /* placed below the nav bar */
     left: 0;
     bottom: 10%; /* placed the footer */
-    width: 200px; /* Adjust width as needed */
+    width: 200px; 
     background: linear-gradient(to right, #909daa, #00bfff);
     padding: 10px;
     box-sizing: border-box;
@@ -55,14 +55,14 @@ aside {
 ol{
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack children vertically */
-    justify-content: space-around; /* Evenly distribute space around items */
+    justify-content: space-between; /* Evenly distribute space around items */
     align-items: center; /* Center items horizontally */
     position: fixed;
-    top: 9%;
+    top: 5%;
     left: 0;
     bottom: 10%;
     width: 200px;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
     overflow-y: hidden;
     margin-left: 1%;
@@ -70,7 +70,40 @@ ol{
 }
 ol li {
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
+}
+#fn-1{
+    margin-left: 7px;
+    transform: scale(42%);
+    text-indent: -2em;      /* Negative indent for the first line */
+    padding-left: 2em;
+}
+#fn-2{
+    margin-left: 7px;
+    transform: scale(45%);
+    text-indent: -2em;      /* Negative indent for the first line */
+    padding-left: 2em; 
+}
+#fn-3{
+    margin-left: 7px;
+    transform: scale(50%);
+    text-indent: -2em;      /* Negative indent for the first line */
+    padding-left: 2em; 
+}
+#fn-4{
+    margin-left: 7px;
+    transform: scale(45%);
+    text-indent: -2em;      /* Negative indent for the first line */
+    padding-left: 4em; 
+}
+#fn-5{
+    margin-left: 7px;
+    transform: scale(50%);
+    text-indent: -2em;      /* Negative indent for the first line */
+    padding-left: 2em; 
+}
+ol li a{
+    font-size: 28px;
 }
 .content {
     position: absolute;
@@ -494,6 +527,7 @@ th {
         margin-bottom: 10px; /* Space between stacked tables */
     }
 }
+
 @keyframes typewriter {
     0%, 31.25% { width: 0; }
     31.25%, 62.5% { width: 133%; }
