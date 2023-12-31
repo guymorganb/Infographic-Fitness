@@ -2,6 +2,8 @@
 
 This repository contains the code and resources for the research project exploring the impact of physical fitness on student wellness. The goal is to develop a static webpage as an infographic and a video presentation of the findings.
 
+the infographic can be visited at: https://guymorganb.github.io/Infographic-Fitness/
+
 ---
 
 📄 **Objective:**
