@@ -100,7 +100,7 @@ section {
     box-sizing: border-box;
 }
 .chartBackdrop{
-    background-color: rgba(168, 168, 168, 0.3);
+    background-color: rgba(168, 168, 168, 0.75);
     border-radius: 25px;
     
 }
