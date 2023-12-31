@@ -14,7 +14,8 @@ The proposed research aims to investigate the connections between physical fitne
 
 🔍 **Research Goals:**
 
-- Evaluate the link between fitness and student emotional health.
+- Perform a holistic investigation into fitness and to student wellbeing
+- Evaluate links between fitness and student emotional health.
 - Assess the connection between fitness and student mental health.
 - Investigate the relationship between fitness and student physical health.
 - Design an infographic that concisely communicates the research findings.
@@ -82,9 +83,61 @@ How to reach out for more information or support.
 
 🌟 **Acknowledgments:**
 
-Special thanks to those who have contributed to the research and development of this project.
+Special thanks to those who have contributed to the research of this project.
 
 ---
 
 🚀 Ready to explore the connection between fitness and wellness in college students? Let's dive in!
 
+
+
+🌟 **Presentation outline & Key Points:**
+
+---
+# Introduction: 
+
+- Name : Guy Beals
+- Major : Computer Science
+- Objectives: Perform a holistic analysis of fitness and how that connects to being a college student at FIU.  
+- Connection to the topic : Fitness is important for college students, Ive noticed my own academic performance influenced by personal fitness levels, as an FIU student being the best version of myself is a top priority, and so is performing at my best. 
+- Activity level : 150min+ per week and roughly 70% is cardio
+
+# B.M.I : 
+- Body mass index is a weight-to-height ratio.
+- Influenced by muscle mass gain/loss and other weight fluctuations.
+- Example: Higher weight relative to height correlates positively with BMI (See figure).
+
+# Positive Correlation: 
+- A positive correlation exists when two variables move in the same direction 
+
+# Negative Correlation:
+- Exists when two variables move in opposite directions, e.g.
+- More years in college and higher GPA can correlate negatively with BMI.
+
+# Correlation coefficient:
+- The correlation coefficient for a positive correlation typically has a value between 0 and +1. 
+- A value of +1 indicates a perfect positive correlation.
+- Values closer to 0 indicate a weaker positive correlation.
+
+# Holistic approach:
+- Fitness is multidimensional: encompasses muscular, physical, mental, and emotional aspects.
+- Overcomes physiological barriers, promotes emotional stability, and combats aging effects.
+- Improves cognitive function and mental wellness.
+- Physical wellness often perceived, with physical activity enhancing quality of life.
+
+# Physical fitness indicators:
+## Males: 
+Positive correlations: 
+- Vital capacity & 1000m run
+- Level of fitness-(body shape) & vital capacity
+- Pull ups & vital capacity
+- Observations: Males found benifits from a combination of cardio excercise and strength building and levels of fitness connected to BMI 
+## Females:
+- Positive correlations: 
+- Vital capacity & BMI
+- Sit & reach & BMI
+- BMI & run performance
+- Observations: Females found benifits from a combination of cardio excercise and flexibility excercises and fitness performance was influence by BMI
+
+# Conclusion:
+While life as an FIU student can be amazing, it doesnt come without challenges, one way prepare for those challanges is to maintain physical fitness levels. Data shows a trend where higher GPA and longer college duration can impact BMI, potentially making workouts more challenging and reducing overall fitness. However, maintaining fitness levels consistently offers holistic benefits for wellness. Therfore; keeping up on physical fitness is one way to live a life for optimal happiness and performance. 

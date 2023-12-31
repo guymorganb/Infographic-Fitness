@@ -1,16 +1,18 @@
 $(document).ready(function() {
     // Data for male students
     var maleData = [
-        { indicator: 'Vital Capacity', description: '1000m run' },
-        { indicator: 'Body Shape', description: 'Pull-ups.' }
+        { indicator: 'Vital Capacity', description: '1000m Run' },
+        { indicator: 'Level of fitness', description: 'Vital capacity' },
+        { indicator: 'Pull-ups', description: 'Vital Capacity' }
+        
         
     ];
 
     // Data for female students
     var femaleData = [
-        { indicator: 'Lower Limb Explosive Power', description: 'Run Speed.' },
-        { indicator: 'Core Strength', description: 'Run Speed.' },
-        { indicator: 'BMI + One Minute Sit-ups', description: ' 50m sprint performance.' },
+        { indicator: 'Vital Capacity', description: 'BMI' },
+        { indicator: 'Sit and reach', description: 'BMI' },
+        { indicator: 'BMI & One Minute Sit-ups', description: ' Sprint Performance.' },
         
     ];
 
