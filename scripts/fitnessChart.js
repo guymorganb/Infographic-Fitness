@@ -8,9 +8,9 @@ $(document).ready(function() {
 
     // Data for female students
     var femaleData = [
-        { indicator: 'Lower Limb Explosive Power', description: 'Crucial for speed quality.' },
-        { indicator: 'Body Shape', description: 'Plays a key role in speed quality.' },
-        { indicator: 'Core Strength', description: 'Important for speed quality.' }
+        { indicator: 'Lower Limb Explosive Power', description: 'Run Speed.' },
+        { indicator: 'Core Strength', description: 'Run Speed.' },
+        { indicator: 'BMI + One Minute Sit-ups', description: ' 50m sprint performance.' },
         
     ];
 
